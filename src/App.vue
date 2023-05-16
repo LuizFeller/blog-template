@@ -140,39 +140,61 @@ for(const algumacoisa of posts)*/
 </template>
 
 <style scoped>
+
+
 form {
-  display: flex;
+  display: center;
   flex-direction: column;
+  padding: center;
+  background: rgb(225, 225, 225);
 }
 
 form > * {
-  margin: 1rem;
-
-  /*CSS (16052023)*/
-
-  text-align: center;
+  margin: center;
+  text-align:justify;
+  
 }
 
-input,
-textarea {
+input, textarea {
   width: 80%;
 
   padding: 12px 20px;
-  margin: 8px 60px;
+  margin: 8px 90px;
   box-sizing: border-box;
   border-radius: 10px;
   background-color: rgb(0, 255, 251);
   color: white;
 }
 
+
+
 button {
   width: 20%;
-
-  padding: 10px 2px;
-  margin: 8px 300px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  background-color: rgb(221, 255, 0);
-  color: black;
+  margin: 8px 200px;
+  display: inline-block;
+  padding: 6px 2px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 10px #999;
 }
+
+button:hover {background-color: black}
+
+button:active {
+  background-color: #8e3e49;
+  box-shadow: 10 10px #666;
+  transform: translateY(10px);
+}
+
+
+
+
+
+
 </style>
