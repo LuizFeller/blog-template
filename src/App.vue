@@ -141,12 +141,19 @@ for(const algumacoisa of posts)*/
 
 <style scoped>
 
+body  {
+  background-image: url("paper.gif");
+  background-color: #cccccc;
+}
+
+
 
 form {
   display: center;
   flex-direction: column;
   padding: center;
   background: rgb(225, 225, 225);
+  
 }
 
 form > * {
@@ -161,9 +168,12 @@ input, textarea {
   padding: 12px 20px;
   margin: 8px 90px;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 15px;
   background-color: rgb(0, 255, 251);
   color: white;
+  font-size: 16px;
+  background-image: src="../assets/search_icon.png";
+
 }
 
 
