@@ -1,168 +1,39 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
+import "@/assets/base.css";
 
 export default {
   data() {
     return {
-      posts: [
-        {
-          title: "Meu Primeiro Post",
-          datetime: Date.now(),
-          content: "Postar aqui é muito legal",
-        },
-        {
-          title: "Meu Primeiro Post",
-          datetime: Date.now(),
-          content: "Postar aqui é muito legal",
-        },
-      ],
-      formData: {
-        title: "",
-        content: "",
-      },
-
-      search: "",
+      posts: [],
     };
   },
-
-  /* Indice
-for(const algumacoisa in posts) */
-
-  /* Valor
-for(const algumacoisa of posts)*/
-
-  computed: {
-    filteredPosts() {
-      //se search estiver vazio, retorne a lista completa de posts
-      if (!this.search) return this.posts;
-
-      //se tiver qualquer coisa em search, faz o filtro
-      const listaFiltrada = [];
-
-      for (const post of this.posts) {
-        if (post.title.includes(this.search)) {
-          listaFiltrada.push(post);
-
-          /*    for (const post of this.posts) {
-        if (this.search && post.title.includes(this.search)) {
-          listaFiltrada.push(post); */
-        }
-      }
-      return listaFiltrada;
-    },
-  },
-
   methods: {
-    handleClick(event) {
-      //adicionar o post à lista de posts
-
-      const now = new Date();
-
-      const dataDaPostagem = `${now.getDate()}/${
-        now.getMonth() + 1
-      }/${now.getFullYear()}`;
-
-      //metodo 1:
-      /* this.posts[this.posts.length] = {
-    title: this.formData.title,
-    content: this.formData.content,
-    }; */
-
-      //metodo 2:
-      this.posts.push({
-        title: this.formData.title,
-        content: this.formData.content,
-        datetime: dataDaPostagem,
-      });
-
-      this.formData = {
-        title: "",
-        content: "",
-      };
+    addPost(newPost) {
+      //adicionar o novo post à lista de posts
+      console.log(newPost);
+      this.posts.push(newPost);
     },
-
-    handleInputChange(event) {
-      const { name, value } = event.target;
-      this.formData[name] = value;
-    },
-
-    /* console.log(event.target.classList); */
-
-    /* estas duas constantes fazerm a mesma coisa que a seguinte abaixo: */
-    /* const name = event.target.name; */
-    /* const value = event.target.value; */
   },
 };
+
+/* Indice
+for(const algumacoisa in posts) */
+
+/* Valor
+for(const algumacoisa of posts)*/
 </script>
 
 <template>
-  <!-- Para mostrar o que está digitando -->
-  <!-- {{ search }} -->
+  <RouterLink to="/">Home</RouterLink>
+  <RouterLink to="/create">Novo Post</RouterLink>
 
-  <input v-model="search" placeholder="Procure pelo título do post..." />
-
-  <div id="Lista-posts">
-    <div class="post" v-for="post in filteredPosts" :key="post.title">
-      <h3>{{ post.title }}</h3>
-      <h4>{{ post.datetime }}</h4>
-      <p>{{ post.content }}</p>
-    </div>
-  </div>
-
-  <p>Titulo aqui -> {{ formData.title }}</p>
-  <p>Conteudo aqui ->{{ formData.content }}</p>
-
-  <form>
-    <input
-      name="title"
-      :value="formData.title"
-      @keyup="handleInputChange"
-      placeholder="Titulo"
-    />
-    <textarea
-      name="content"
-      :value="formData.content"
-      @keyup="handleInputChange"
-      placeholder="Escreva seu post aqui ..."
-      id=""
-      cols="30"
-      rows="10"
-    ></textarea>
-
-    <!-- <form action="">
-    <input type="text" />
-    <textarea name="content" id="" cols="30" rows="10"></textarea> -->
-
-    <button type="button" @click="handleClick">Salvar</button>
-  </form>
-
-  <RouterView />
+  <RouterView :posts="posts" @create-post="addPost" />
 </template>
 
 <style scoped>
-
-body  {
-  background-image: url("paper.gif");
-  background-color: #cccccc;
-}
-
-
-
-form {
-  display: center;
-  flex-direction: column;
-  padding: center;
-  background: rgb(225, 225, 225);
-  
-}
-
-form > * {
-  margin: center;
-  text-align:justify;
-  
-}
-
-input, textarea {
+input,
+textarea {
   width: 80%;
 
   padding: 12px 20px;
@@ -172,11 +43,8 @@ input, textarea {
   background-color: rgb(0, 255, 251);
   color: white;
   font-size: 16px;
-  background-image: src="../assets/search_icon.png";
-
+  background-image: src= "../assets/search_icon.png";
 }
-
-
 
 button {
   width: 20%;
@@ -188,23 +56,19 @@ button {
   text-align: center;
   outline: none;
   color: #fff;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: none;
   border-radius: 30px;
   box-shadow: 0 10px #999;
 }
 
-button:hover {background-color: black}
+button:hover {
+  background-color: black;
+}
 
 button:active {
   background-color: #8e3e49;
   box-shadow: 10 10px #666;
   transform: translateY(10px);
 }
-
-
-
-
-
-
 </style>
