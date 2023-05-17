@@ -37,21 +37,38 @@ textarea {
   width: 80%;
 
   padding: 12px 20px;
-  margin: 8px 60px;
+  margin: 8px 90px;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 15px;
   background-color: rgb(0, 255, 251);
   color: white;
+  font-size: 16px;
+  background-image: src= "../assets/search_icon.png";
 }
 
 button {
   width: 20%;
+  margin: 8px 200px;
+  display: inline-block;
+  padding: 6px 2px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 10px #999;
+}
 
-  padding: 10px 2px;
-  margin: 8px 300px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  background-color: rgb(221, 255, 0);
-  color: black;
+button:hover {
+  background-color: black;
+}
+
+button:active {
+  background-color: #8e3e49;
+  box-shadow: 10 10px #666;
+  transform: translateY(10px);
 }
 </style>
