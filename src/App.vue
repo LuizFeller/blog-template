@@ -37,7 +37,8 @@ for(const algumacoisa of posts)*/
 
 <style scoped>
 header {
-  background-color: yellow;
+  /* background-color: yellow; */
+
 }
 
 nav {

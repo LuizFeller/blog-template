@@ -10,9 +10,9 @@ form {
 }
 
 body {
-  background-image: url("https://img.shields.io/badge/xbox-%23107C10.svg?style=for-the-badge&logo=xbox&logoColor=white");
-  /* background-image: "../assets/marvel-logo.png" */
-  /* background-color: yellow; */
+  background: url("https://images.unsplash.com/photo-1462216589242-9e3e00a47a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNzUxNDR8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 form > * {
