@@ -1,12 +1,21 @@
+@import "base.css";
+@import "button.css";
+@import "input.css";
+
 form {
-    display: flex;
-    flex-direction: column;
-    background: orange;
-  }
-  
-  form > * {
-    margin: 1rem;
-  
-  
-    text-align: center;
-  }
+  display: flex;
+  flex-direction: column;
+  /* background: orange; */
+  align-items: center;
+}
+
+body {
+  background-image: url("https://img.shields.io/badge/xbox-%23107C10.svg?style=for-the-badge&logo=xbox&logoColor=white");
+  /* background-image: "../assets/marvel-logo.png" */
+  /* background-color: yellow; */
+}
+
+form > * {
+  margin: 1rem;
+  text-align: center;
+}
