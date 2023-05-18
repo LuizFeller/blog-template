@@ -49,7 +49,7 @@ export default {
         title: "",
         content: "",
       };
-      this.$router.push("");
+      this.$router.push("/");
     },
 
     handleInputChange(event) {
