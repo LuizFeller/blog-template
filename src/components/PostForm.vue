@@ -2,6 +2,7 @@
 export default {
   props: {
     post: Object,
+    id: String,
   },
   data() {
     return {
@@ -9,6 +10,7 @@ export default {
         title: this.post?.title || "",
         content: this.post?.content || "",
       },
+      isEditing: Boolean(this.post),
     };
   },
 
@@ -18,25 +20,38 @@ export default {
         alert("preencha o título do post");
         return;
       }
-
+      //adicionar o post à lista posts
       const now = new Date();
 
       const dataDaPostagem = `${now.getDate()}/${
         now.getMonth() + 1
-      }/${now.getFullYear()}`;
+      } - ${now.getFullYear()} - ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
 
-      const newPost = {
+      //método 1
+      //this.posts[this.posts.length] = {
+      //title: this.formData.title,
+      //content: this.formData.content,
+      //};
+
+      const postData = {
         title: this.formData.title,
         content: this.formData.content,
         datetime: dataDaPostagem,
       };
 
-      this.$emit("create-post", newPost);
+      if (this.isEditing) {
+        this.$emit("edit-post", postData, this.id);
+      } else {
+        this.$emit("create-post", postData);
+      }
 
-      this.formData = {
+      //emitir o evento create-post
+
+      /* this.formData = {
         title: "",
         content: "",
-      };
+      }; */
+
       this.$router.push("/");
     },
 
@@ -49,13 +64,11 @@ export default {
 </script>
 
 <template>
+  <!-- ID passado pelo meu pai: -->
+  {{ id }}
   <form>
-    <input
-      name="title"
-      :value="formData.title"
-      @keyup="handleInputChange"
-      placeholder="Titulo"
-    />
+    <input v-model="formData.title" placeholder="Título" />
+
     <textarea
       v-model="formData.content"
       placeholder="Escreva seu post aqui ..."
