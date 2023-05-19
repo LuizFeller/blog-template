@@ -40,8 +40,9 @@ for(const algumacoisa of posts)*/
       <RouterLink to="/create">Novo Post</RouterLink>
     </nav>
   </header>
-
-  <RouterView :posts="posts" @create-post="addPost" @edit-post="updatePost" />
+  <main>
+    <RouterView :posts="posts" @create-post="addPost" @edit-post="updatePost" />
+  </main>
 </template>
 
 <style scoped>
