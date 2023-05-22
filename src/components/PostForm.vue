@@ -25,7 +25,10 @@ export default {
 
       const dataDaPostagem = `${now.getDate()}/${
         now.getMonth() + 1
-      } - ${now.getFullYear()} - ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+      }/${now.getFullYear()} - ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+
+      /* now.getMonth() + 1
+      } - ${now.getFullYear()} - ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`; */
 
       //método 1
       //this.posts[this.posts.length] = {
@@ -45,8 +48,6 @@ export default {
         this.$emit("create-post", postData);
       }
 
-      //emitir o evento create-post
-
       /* this.formData = {
         title: "",
         content: "",
@@ -55,17 +56,17 @@ export default {
       this.$router.push("/");
     },
 
-    handleInputChange(event) {
+    /* handleInputChange(event) {
       const { name, value } = event.target;
       this.formData[name] = value;
-    },
+    }, */
   },
 };
 </script>
 
 <template>
-  <!-- ID passado pelo meu pai: -->
-  {{ id }}
+  <!-- ID passado pelo meu pai:
+  {{ id }} -->
   <form>
     <input v-model="formData.title" placeholder="Título" />
 
