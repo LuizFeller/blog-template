@@ -1,4 +1,11 @@
 <script>
+/*
+1 - clicar na lixeira
+2 - configurar o meu id para ser igual ao id do post que eu quero deletar
+3 - abrir o modal
+4 - título dentro do modal deve ser o título do post que eu quero deletar
+*/
+
 import { RouterLink } from "vue-router";
 
 export default {
@@ -9,6 +16,7 @@ export default {
     return {
       search: "",
       showModal: false,
+      selectedPost: null,
     };
   },
 
@@ -42,12 +50,28 @@ export default {
         if (post.title === title) return index;
       }
     },
-    /* handledCLick() {
+    setupModal(id) {
+      // mostrar e esconder o modal
+      this.showModal = !this.showModal;
+      //selecionar o post e desselecionar o post
+      if (id) {
+        //salva o post inteiro com o título, conteúdo
+        this.selectedPost = this.posts[id];
+        return;
+      }
+
+      /* handledCLick() {
       console.log("Oi pessoal");
     }, */
 
-    toggle() {
-      this.showModal = !this.showModal;
+      this.selectedPost = null;
+    },
+    deletePost() {
+      const id = this.getPostId(this.selectedPost.title);
+
+      this.$emit("delete-post", id);
+
+      this.setupModal();
     },
   },
 };
@@ -62,7 +86,11 @@ export default {
         <RouterLink :to="`/edit/${getPostId(post.title)}`">
           <span class="material-symbols-rounded">edit</span>
         </RouterLink>
-        <span class="material-symbols-rounded" @click="toggle">close</span>
+        <span
+          class="material-symbols-rounded"
+          @click="setupModal(getPostId(post.title))"
+          >delete</span
+        >
       </h3>
       <h4>{{ post.datetime }}</h4>
       <p>{{ post.content }}</p>
@@ -71,12 +99,12 @@ export default {
   <div class="modal" v-show="showModal">
     <div class="modal-content">
       <h3>Deletar Post</h3>
-      <p>Tem certeza que deseja deletar o 'Titulo do post'?</p>
+      <p>Tem certeza que deseja deletar o 'TÍTULO DO POST AQUI?'</p>
       <p>Esta ação é irreversivel</p>
 
       <div class="modal-actions">
+        <button class="bg-error" @click="setupModal">Cancelar</button>
         <button class="bg-sucess" @click="deletePost">Confirmar</button>
-        <button class="bg-error" @click="toggle">Cancelar</button>
       </div>
     </div>
   </div>
