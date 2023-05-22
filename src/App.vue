@@ -33,22 +33,20 @@ export default {
     updatePost(upDatedPost, id) {
       this.posts[id] = upDatedPost;
     },
-    removePost(id){
+    removePost(id) {
       //como remover um post do array this.posts
       const minhaNovaLista = [];
 
-      for(const index in this.posts) {
+      for (const index in this.posts) {
         if (index == id) {
           continue;
-        
         }
 
         const post = this.posts[index];
         minhaNovaLista.push(post);
       }
       this.posts = minhaNovaLista;
-    }
-
+    },
   },
 };
 
@@ -57,7 +55,6 @@ for(const algumacoisa in posts) */
 
 /* Valor
 for(const algumacoisa of posts)*/
-
 </script>
 
 <template>
@@ -69,10 +66,10 @@ for(const algumacoisa of posts)*/
   </header>
   <main>
     <RouterView
-    :posts="posts"
-    @create-post="addPost"
-    @edit-post="updatePost"
-    @delete-post="removePost"
+      :posts="posts"
+      @create-post="addPost"
+      @edit-post="updatePost"
+      @delete-post="removePost"
     />
   </main>
 </template>
