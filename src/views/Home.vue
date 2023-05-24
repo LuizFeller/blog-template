@@ -70,7 +70,7 @@ export default {
       const id = this.getPostId(this.selectedPost.title);
 
       this.$emit("delete-post", id);
-
+      // feche o modal e desselecione o post
       this.setupModal();
     },
   },
@@ -91,7 +91,7 @@ export default {
           <span class="material-symbols-rounded">edit</span>
         </RouterLink>
         <span
-          class="material-symbols-rounded"
+          class="material-symbols-rounded red"
           @click="setupModal(getPostId(post.title))"
           >delete</span
         >
@@ -104,8 +104,8 @@ export default {
   <div class="modal" v-show="showModal">
     <div class="modal-content">
       <h3>Deletar Post</h3>
-      <p>Tem certeza que deseja deletar o 'TÍTULO DO POST AQUI?'</p>
-      <p>Esta ação é irreversivel</p>
+      <p>Tem certeza que quer deletar o post '{{ selectedPost?.title }}' ?</p>
+      <!-- <p>Esta ação é irreversivel</p> -->
 
       <div class="modal-actions">
         <button class="bg-error" @click="setupModal">Cancelar</button>
@@ -114,3 +114,15 @@ export default {
     </div>
   </div>
 </template>
+
+<style scoped>
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.red {
+  color: black;
+  cursor: pointer;
+}
+</style>

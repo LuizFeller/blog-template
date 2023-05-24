@@ -6,7 +6,7 @@ export default {
     posts: Array,
   },
   data() {
-    //acessa o parâmetro id uma única vez
+    //acessa o parâmetro id de uma única vez
     const id = this.$route.params.id;
 
     return {

@@ -1,7 +1,7 @@
 .modal {
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
 
   background: rgba(0, 0, 0, 0.2);
 
@@ -14,7 +14,7 @@
 }
 
 .modal-content {
-  background: green;
+  background: whitesmoke;
 
   display: flex;
   flex-direction: column;
@@ -22,7 +22,9 @@
   align-items: center;
 
   width: 80%;
-  max-width: 800px;
+  max-width: 500px;
+  border-radius: 4cqmax;
+  border-style: double;
 
-  max-height: 4px;
+  max-height: 350px;
 }

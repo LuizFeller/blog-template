@@ -22,14 +22,15 @@ export default {
   </h2>
   <h4>{{ post.datetime }}</h4>
 
-  <textarea :value="post.content"></textarea>
+  <textarea readonly :value="post.content"></textarea>
 </template>
 
 <style scoped>
 textarea {
-  resize: nome;
-  outline: nome;
-  border: nome;
+  resize: none;
+  outline: none;
+  border: none;
   width: 80%;
+  /* height: 164px; */
 }
 </style>
