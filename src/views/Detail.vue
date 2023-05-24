@@ -31,6 +31,6 @@ textarea {
   outline: none;
   border: none;
   width: 80%;
-  height: 164px;
+  /* height: 164px; */
 }
 </style>
