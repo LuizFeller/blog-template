@@ -107,7 +107,7 @@ export default {
       <p>Tem certeza que quer deletar o post '{{ selectedPost?.title }}' ?</p>
       <!-- <p>Esta ação é irreversivel</p> -->
 
-      <div class="modal-actions">
+      <div class="">
         <button class="bg-error" @click="setupModal">Cancelar</button>
         <button class="bg-sucess" @click="deletePost">Confirmar</button>
       </div>
@@ -115,13 +115,25 @@ export default {
   </div>
 </template>
 
-<style scoped>
-.flex {
-  display: flex;
-  align-items: center;
+<style scope>
+.post {
+  text-decoration: none;
+  margin-top: 2rem;
+  width: 600px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 40px;
+  overflow: hidden;
+  word-wrap: break-word;
+  background-color: rgb(222, 219, 219);
 }
 
-.red {
+.material-symbols-rounded {
+  padding: px;
+  margin-right: 25px;
+  margin-left: 250px;
+  border-radius: 40%;
+  background-color: rgb(129, 187, 245);
   color: black;
   cursor: pointer;
 }

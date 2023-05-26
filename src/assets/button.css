@@ -12,9 +12,9 @@ button {
   text-align: center;
   outline: none;
   color: #fff;
-  background-color: #4caf50;
+  background-color: #0a0b0a;
   border: none;
-  border-radius: 30px;
+  border-radius: 20px;
   box-shadow: 0 10px #999;
 }
 
@@ -23,7 +23,8 @@ button:hover {
 }
 
 button:active {
-  background-color: #8e3e49;
-  box-shadow: 10 10px #666;
+  background-color: hsl(54, 94%, 38%);
+  box-shadow: 10 10px #7d7c7c;
   transform: translateY(10px);
+  color: black;
 }

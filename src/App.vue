@@ -9,17 +9,17 @@ export default {
         {
           title: "Meu primeiro Post",
           datetime: "18/05/2023",
-          content: "qualquer",
+          content: "Primeiro",
         },
         {
           title: "Meu segundo Post",
           datetime: "18/05/2023",
-          content: "qualquer",
+          content: "Segundo",
         },
         {
           title: "Meu terceiro Post",
           datetime: "18/05/2023",
-          content: "qualquer",
+          content: "Terceiro",
         },
       ],
     };
@@ -51,10 +51,10 @@ export default {
 };
 
 /* Indice
-for(const algumacoisa in posts) */
+for(const alguma coisa in posts) */
 
 /* Valor
-for(const algumacoisa of posts)*/
+for(const alguma coisa of posts)*/
 </script>
 
 <template>
@@ -75,12 +75,24 @@ for(const algumacoisa of posts)*/
 </template>
 
 <style scoped>
-/* header {
-  background-color: yellow;
-} */
-
 nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #333;
+  background-color: #dddddd;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: #6e88a7;
 }
 </style>

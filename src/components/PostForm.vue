@@ -81,3 +81,57 @@ export default {
     <button type="button" @click="handleCreatePost">Salvar</button>
   </form>
 </template>
+
+<style scoped>
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 30px;
+}
+
+form > input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+}
+
+form > * {
+  margin: 1rem;
+  border: 0rem;
+  outline: 40px;
+  padding: 40px;
+  font-size: 20px;
+  border-radius: 20px;
+  width: 100%;
+  background-color: whitesmoke;
+  transition-delay: 0, 4s;
+}
+
+form > input:focus,
+form > textarea:focus {
+  border: px solid #ccc;
+  background-color: rgb(176, 160, 160);
+}
+
+form button {
+  background-color: #3c3c75;
+  color: white;
+  font-size: 20px;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+form button:hover {
+  background-color: rgb(85, 126, 85);
+}
+</style>
