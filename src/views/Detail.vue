@@ -25,12 +25,20 @@ export default {
   <textarea readonly :value="post.content"></textarea>
 </template>
 
-<style scoped>
+<style>
 textarea {
   resize: none;
   outline: none;
-  border: none;
-  width: 80%;
-  /* height: 164px; */
+  border: black;
+  width: 60%;
+  height:30px;
+  border-radius: 10px;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>
+
